@@ -124,8 +124,12 @@
     border-radius: 10px;
 }
 
-.menu-bar .item label:hover > .tooltip-item{
+.menu-bar .item:hover > .tooltip-item{
     visibility: visible;
+}
+
+.menu-bar .item input[type="checkbox"]:checked ~ .tooltip-item{
+    visibility: hidden;
 }
 
 
@@ -145,6 +149,23 @@
     cursor: pointer;
     user-select: none;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+canvas {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
 }
 
 @keyframes tooltip-show {

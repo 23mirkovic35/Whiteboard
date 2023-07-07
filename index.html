@@ -9,14 +9,14 @@
     <title>Whiteboard</title>
 </head>
 <body>
-    <canvas id="main"></canvas>
-    <canvas id="draft"></canvas>
+    <div class="container">
+        <canvas id="main"></canvas>
+        <canvas id="draft"></canvas>
+    </div>
     <div class="menu-bar">
         <div class="item active" id="pointer">
             <input type="checkbox" name="item-check" id="pointer-cb">
-            <label class="selected-pointer" for="pointer-cb">
-                <span class="tooltip-item">Select&nbsp;<div class="keyboard-btn">shift</div>&nbsp;+&nbsp;<div class="keyboard-btn">P</div></span>
-                <svg id="svg-pointer1" class="selected" height="25px" width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.3572 3.23397C3.66645 2.97447 4.1014 2.92638 4.45988 3.11204L20.7851 11.567C21.1426 11.7522 21.3542 12.1337 21.322 12.5351C21.2898 12.9364 21.02 13.2793 20.6375 13.405L13.7827 15.6586L10.373 22.0179C10.1828 22.3728 9.79826 22.5789 9.39743 22.541C8.9966 22.503 8.65762 22.2284 8.53735 21.8441L3.04564 4.29872C2.92505 3.91345 3.04794 3.49346 3.3572 3.23397ZM5.67123 5.99173L9.73507 18.9752L12.2091 14.361C12.3304 14.1347 12.5341 13.9637 12.7781 13.8835L17.7518 12.2484L5.67123 5.99173Z" fill="#151515"></path> </g></svg>
+            <label class="selected-pointer" for="pointer-cb"><svg id="svg-pointer1" class="selected" height="25px" width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.3572 3.23397C3.66645 2.97447 4.1014 2.92638 4.45988 3.11204L20.7851 11.567C21.1426 11.7522 21.3542 12.1337 21.322 12.5351C21.2898 12.9364 21.02 13.2793 20.6375 13.405L13.7827 15.6586L10.373 22.0179C10.1828 22.3728 9.79826 22.5789 9.39743 22.541C8.9966 22.503 8.65762 22.2284 8.53735 21.8441L3.04564 4.29872C2.92505 3.91345 3.04794 3.49346 3.3572 3.23397ZM5.67123 5.99173L9.73507 18.9752L12.2091 14.361C12.3304 14.1347 12.5341 13.9637 12.7781 13.8835L17.7518 12.2484L5.67123 5.99173Z" fill="#151515"></path> </g></svg>
                 <svg id="svg-hand1" height="25px" width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M17 11V9.27308C17 8.75533 17.2588 8.27183 17.6896 7.98463L17.7388 7.95181C18.2041 7.64162 18.806 7.62565 19.287 7.91073V7.91073C19.729 8.17263 20 8.64824 20 9.16196L20 13C20 14.6997 19.4699 16.2756 18.5661 17.5714C17.1204 19.6439 14.7186 21 12 21C9.28145 21 6.8796 19.6439 5.43394 17.5714C4.53009 16.2756 4.00001 14.6997 4.00001 13L4.00001 12.2117C4 11.438 4.44632 10.7336 5.14599 10.4032V10.4032C5.6867 10.1479 6.3133 10.1479 6.85401 10.4032V10.4032C7.55368 10.7336 8 11.438 8.00001 12.2117L8.00001 13" stroke="#151515" stroke-width="2" stroke-linecap="round"></path> <path d="M8 12V5.80278C8 5.30125 8.25065 4.8329 8.66795 4.5547V4.5547C9.1718 4.2188 9.8282 4.2188 10.3321 4.5547V4.5547C10.7493 4.8329 11 5.30125 11 5.80278V11" stroke="#151515" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 11V5.80278C14 5.30125 14.2507 4.8329 14.6679 4.5547V4.5547C15.1718 4.2188 15.8282 4.2188 16.3321 4.5547V4.5547C16.7493 4.8329 17 5.30125 17 5.80278V9" stroke="#151515" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11 6V4.80278C11 4.30125 11.2507 3.8329 11.6679 3.5547V3.5547C12.1718 3.2188 12.8282 3.2188 13.3321 3.5547V3.5547C13.7493 3.8329 14 4.30125 14 4.80278V6" stroke="#151515" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
             </label>
             <div class="items-container">
@@ -29,11 +29,11 @@
                     <span class="tooltip">Hand</span>
                 </div>
             </div>
+            <span class="tooltip-item">Select&nbsp;<div class="keyboard-btn">shift</div>&nbsp;+&nbsp;<div class="keyboard-btn">P</div></span>
         </div>
         <div class="item" id="pen">
             <input type="checkbox" name="item-check" id="pen-cb">
             <label class="selected-pen" for="pen-cb">
-                <span class="tooltip-item">Draw&nbsp;<div class="keyboard-btn">shift</div>&nbsp;+&nbsp;<div class="keyboard-btn">D</div></span>
                 <svg id="svg-pen1" class="selected" fill="#000000" width="25px" height="25px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <path d="M31.25 7.003c0-0 0-0.001 0-0.001 0-0.346-0.14-0.659-0.365-0.886l-5-5c-0.227-0.226-0.539-0.366-0.885-0.366s-0.658 0.14-0.885 0.366v0l-20.999 20.999c-0.146 0.146-0.256 0.329-0.316 0.532l-0.002 0.009-2 7c-0.030 0.102-0.048 0.22-0.048 0.342 0 0.691 0.559 1.251 1.25 1.252h0c0.126-0 0.248-0.019 0.363-0.053l-0.009 0.002 6.788-2c0.206-0.063 0.383-0.17 0.527-0.311l-0 0 21.211-21c0.229-0.226 0.37-0.539 0.371-0.886v-0zM8.133 26.891l-4.307 1.268 1.287-4.504 14.891-14.891 3.219 3.187zM25 10.191l-3.228-3.196 3.228-3.228 3.229 3.228z"></path>
                 </svg>
@@ -81,11 +81,11 @@
                     <span class="tooltip">Eraser</span>
                 </div>
             </div>
+            <span class="tooltip-item">Draw&nbsp;<div class="keyboard-btn">shift</div>&nbsp;+&nbsp;<div class="keyboard-btn">D</div></span>
         </div>
         <div class="item" id="shape">
             <input type="checkbox" name="item-check" id="shape-cb">
             <label class="selected-shape" for="shape-cb">
-                <span class="tooltip-item">Line&nbsp;<div class="keyboard-btn">shift</div>&nbsp;+&nbsp;<div class="keyboard-btn">L</div></span>
                 <svg id="svg-shapes" class="selected" height="25px" width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

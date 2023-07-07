@@ -1,3 +1,5 @@
+// menu bar settings 
+
 const checkBoxArray = document.querySelectorAll('input');
 let selectedItem = "pointer";
 let lastSelectedItemArray = new Array(3);
@@ -170,3 +172,18 @@ document.addEventListener('keyup', function(event) {
     }
     shiftPressed = false;
 });
+
+// drawing on canvas
+
+const main = document.getElementById('main');
+const mctx = main.getContext('2d')
+main.height = window.innerHeight
+main.width = window.innerWidth
+const draft = document.getElementById('draft');
+const ctx = draft.getContext('2d');
+draft.height = window.innerHeight;
+draft.width = window.innerWidth;
+
+draft.addEventListener("click", ()=>{
+    restartAllCheckboxs();
+})
