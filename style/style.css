@@ -2,4 +2,161 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ========= MANU BAR ========= */
+
+.menu-bar{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 0 10px 10px 0;
+}
+
+.menu-bar .item label{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.menu-bar .item{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.menu-bar .item:hover{
+    background-color: rgb(212, 211, 211);
+}
+
+.menu-bar .item.active{
+    background-color: rgb(248, 161, 69);
+}
+
+
+.menu-bar .item .selected-pointer svg,
+.menu-bar .item .selected-pen svg,
+.menu-bar .item .selected-shape svg{
+    display: none;
+}
+
+.menu-bar .item .selected-pointer .selected,
+.menu-bar .item .selected-pen .selected,
+.menu-bar .item .selected-shape .selected{
+    display: flex;
+}
+
+.menu-bar .item input[type="checkbox"]{
+    display: none;
+}
+
+.menu-bar .item input[type="checkbox"]:checked ~ .items-container{
+    visibility: visible;
+    animation: items-show 0.3s;
+}
+.menu-bar .item .items-container{
+    visibility: hidden;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: absolute;
+    left: calc(100%  + 15px);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.menu-bar .item .items-container .container-item {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background 0.5s ease;
+}
+
+.menu-bar .item .items-container .container-item:hover{
+    background-color: rgb(212, 211, 211);
+}
+
+.menu-bar .item .items-container .container-item:hover > .tooltip {
+    visibility: visible;
+    animation: tooltip-show 0.3s;
+}
+
+
+
+.menu-bar .tooltip{
+    visibility: hidden;
+    position: absolute;
+    bottom: calc(100% + 5px);
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.menu-bar .tooltip-item{
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 15px);
+    transform: translateY(-50%);
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.menu-bar .item label:hover > .tooltip-item{
+    visibility: visible;
+}
+
+
+.keyboard-btn{
+    display: inline-block;
+    margin: 2px;
+    padding: 3px 6px;
+    background-color: #f2f2f2;
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5);
+    color: #444;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes tooltip-show {
+    0%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes items-show {
+    0%{ 
+        opacity: 0;
+        transform: translate(0);
+    }
 }
