@@ -184,6 +184,50 @@ const ctx = draft.getContext('2d');
 draft.height = window.innerHeight;
 draft.width = window.innerWidth;
 
+var isDrawing = false;
+var prev;
+
+function getXY(e) {
+    var r = draft.getBoundingClientRect();
+    return {x: e.clientX - r.left, y: e.clientY - r.top}
+  }
+
+draft.addEventListener('mousedown', handleMouseDown);
+draft.addEventListener('mousemove', handleMouseMove);
+draft.addEventListener('mouseup', handleMouseUp);
+
+
+function drawPen(event){
+    ctx.lineWidth = 1;                 
+    var point = getXY(event)
+    ctx.beginPath()
+    ctx.moveTo(prev.x, prev.y)      
+    ctx.lineTo(point.x, point.y)
+    ctx.stroke()  
+    ctx.closePath()                
+    prev = point
+}
+
+function handleMouseDown(event) {
+  isDrawing = true;
+  prev = getXY(event);
+}
+
+function handleMouseMove(event) {
+    if(!isDrawing) return;
+    switch(selectedItem){
+        case "pencile":{
+            drawPen(event);
+            break;
+        }
+        default:break;
+    }
+}
+
+function handleMouseUp() {
+  isDrawing = false;
+}
+
 draft.addEventListener("click", ()=>{
     restartAllCheckboxs();
 })
