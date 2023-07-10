@@ -9,13 +9,13 @@
 
 .menu-bar{
     position: absolute;
-    left: 0;
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
     padding: 10px;
     background-color: white;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 10px;
 }
 
 .menu-bar .item label{
@@ -27,10 +27,10 @@
 }
 
 .menu-bar .item{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 50%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 10px;
     position: relative;
     transition: background 0.3s ease;
 }
@@ -77,7 +77,7 @@
     border-radius: 10px;
 }
 
-.menu-bar .item .items-container .container-item {
+.menu-bar .item .items-container .container-item{
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -85,7 +85,7 @@
     margin-left: 10px;
     margin-right: 10px;
     padding: 5px;
-    border-radius: 50%;
+    border-radius: 10px;
     transition: background 0.5s ease;
 }
 
@@ -97,8 +97,6 @@
     visibility: visible;
     animation: tooltip-show 0.3s;
 }
-
-
 
 .menu-bar .tooltip{
     visibility: hidden;
@@ -151,6 +149,118 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.menu-bar .item input[type="checkbox"]:checked ~ .color-picker{
+    visibility: visible;
+    animation: items-show 0.3s;
+}
+.menu-bar .item .color-picker{
+    width: 130px;
+    visibility: hidden;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: absolute;
+    left: calc(100%  + 15px);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    grid-gap: 10px;
+}
+
+.menu-bar .item .color-picker .container-item{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.5s ease;
+}
+
+.current-color{
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-color: #252525;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.menu-bar .item .color-picker .container-item:hover{
+    background-color: rgb(212, 211, 211);
+}
+
+.color{
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.color.black{
+    background-color: #252525;
+}
+
+.color.yellow{
+    background-color: rgb(254, 212, 48);
+}
+
+.color.light-orange{
+    background-color: rgb(251, 174, 23);
+}
+
+.color.orange{
+    background-color: rgb(243, 99, 35);
+}
+
+.color.red{
+    background-color: rgb(191,0,0);
+}
+
+.color.dark-red{
+    background-color: rgb(128,0,0);
+}
+
+.color.magenta{
+    background-color: rgb(207, 18, 120);
+}
+
+.color.dark-purple{
+    background-color: rgb(91, 49, 141);
+}
+
+.color.purple{
+    background-color: rgb(145, 75, 184);
+}
+
+.color.light-blue{
+    background-color: rgb(62, 204, 253);
+}
+
+.color.blue{
+    background-color: rgb(0, 105, 253);
+}
+
+.color.light-green{
+    background-color: rgb(126, 196, 0);
+}
+
+.color.green{
+    background-color: rgb(2, 165, 86);
+}
+
+.color.light-gray{
+    background-color: rgb(235, 235, 235);
+}
+
+.color.gray{
+    background-color: rgb(182, 182, 182);
+}
+
 .container {
     position:absolute;
     top: 0;
@@ -161,7 +271,15 @@
     align-items: center;
     justify-content: center;
 }
-canvas {
+
+.container textarea{
+    visibility: hidden;
+    position: fixed;
+    top: 100px;
+    left: 10px;
+}
+
+.container>canvas {
     position:absolute;
     left:50%;
     top:50%;
